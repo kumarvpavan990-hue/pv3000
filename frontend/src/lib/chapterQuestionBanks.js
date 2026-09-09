@@ -19,6 +19,7 @@ import { SOLUTIONS_NUMERIC } from "@/lib/solutionsNumericals";
 import { ECF_MCQ } from "@/lib/ecfMcq";
 import { SOLUTIONS_MCQ } from "@/lib/solutionsMcq";
 import { RF_MCQ } from "@/lib/relationsMcq";
+import { INVTRIG_MCQ } from "@/lib/invTrigFbk";
 
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
@@ -146,6 +147,10 @@ export const CHAPTER_QUESTION_BANKS = {
   // ===== Maths — Relations and Functions · 1 Mark MCQs (Part A) =====
   "math:Relations and Functions:A": RF_MCQ,
   "math:1:A": RF_MCQ,
+
+  // ===== Maths — Inverse Trigonometric Functions · Fill in the Blanks (Part A) =====
+  "math:Inverse Trigonometric Functions:A": INVTRIG_MCQ,
+  "math:2:A": INVTRIG_MCQ,
 };
 
 export function getChapterBank(subjectId, ch, mark) {

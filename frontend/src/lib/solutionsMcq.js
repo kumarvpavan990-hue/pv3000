@@ -1,7 +1,7 @@
 // Solutions (Chemistry) — 1 Mark MCQs, grouped by year. Rendered by <MathText/>.
 // Options embedded in question text (newlines preserved); `solution` = answer.
 
-const P = (year, label, tint, questions) => ({ year, label, tint, questions });
+const P = (year, label, tint, questions, options) => ({ year, label, tint, questions, ...(options ? { options } : {}) });
 const M = (tag, text, answer) => ({ tag, qno: "", marks: 1, text, solution: [`Correct answer: ${answer}`] });
 
 export const SOLUTIONS_MCQ = [
@@ -31,4 +31,11 @@ export const SOLUTIONS_MCQ = [
     M("Exam 2", "To determine molar mass of Biomolecules and Polymers, which Colligative property based method has advantage over other methods?\na) Relative lowering of vapour pressure\nb) Elevation of Boiling point\nc) Depression in freezing point\nd) Osmotic pressure", "d) Osmotic pressure"),
     M("Exam 3", "Van't Hoff factor (i) for complete dissociation of $\\text{K}_2\\text{SO}_4$ is\na) 0\nb) 1\nc) 2\nd) 3", "d) 3"),
   ])],
+  [P("Fill in the Blanks", "1 Mark", "amber", [
+    M("FBK 1", "Van't Hoff factor (i) for a non-electrolyte in a solution is ______.", "one"),
+    M("FBK 2", "As temperature increases, solubility of gases in liquid ______.", "decreases"),
+    M("FBK 3", "The solubility of a solid in a liquid ______ with temperature for an endothermic process.", "increases"),
+    M("FBK 4", "______ is the number of moles of solute dissolved in one litre of solution.", "Molarity"),
+    M("FBK 5", "The number of moles of solute present in one kilogram of the solvent is called ______.", "Molality"),
+  ], ["Molarity", "decreases", "Molality", "increases", "one"])],
 ];
