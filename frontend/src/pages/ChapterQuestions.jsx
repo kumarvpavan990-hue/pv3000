@@ -4,9 +4,11 @@ import { useQueryClient, useQuery } from "@tanstack/react-query";
 import { getSubject, chapterImageUrl } from "@/lib/api";
 import { Header } from "@/components/Header";
 import ImageZoomModal from "@/components/ImageZoomModal";
+import SimilarityModal from "@/components/SimilarityModal";
 import { ACCENTS } from "@/lib/theme";
 import { BLUEPRINTS } from "@/lib/blueprints";
 import { resolveChapterBank } from "@/lib/chapterQuestionBanks";
+import { resolveSimilarity } from "@/lib/similarityBank";
 import { Textarea } from "@/components/ui/textarea";
 import { MathText } from "@/components/MathText";
 import { Atom, FlaskConical, Sigma, Dna, Cpu, BookOpen, Languages, ScrollText, ChevronLeft, ChevronRight, Pencil, Check, X, Star, FileQuestion, Lightbulb } from "lucide-react";
@@ -46,6 +48,8 @@ export default function ChapterQuestions() {
   const [draft, setDraft] = React.useState("");
   const [revealed, setRevealed] = React.useState({});
   const [zoom, setZoom] = React.useState(null);
+  const [showSim, setShowSim] = React.useState(false);
+  const simGroups = resolveSimilarity({ chapterName, mark });
   const STORAGE_KEY = `chq_edits_${subjectId}_${ch || chapterName}_${mark}`;
 
   const groups = pages[page] || [];
@@ -79,6 +83,7 @@ export default function ChapterQuestions() {
         rightSlot={
           <button
             type="button"
+            onClick={() => setShowSim(true)}
             className="shine-btn group relative inline-flex items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-amber-900 shadow-lg shadow-amber-500/40 ring-1 ring-white/60 transition-transform hover:scale-105 active:scale-95 md:text-xs"
           >
             <Star className="h-3.5 w-3.5 fill-amber-600 text-amber-700 animate-[twinkle_1.5s_ease-in-out_infinite]" />
@@ -230,6 +235,7 @@ export default function ChapterQuestions() {
       )}
 
       {zoom && <ImageZoomModal src={zoom.src} alt={zoom.alt} onClose={() => setZoom(null)} />}
+      {showSim && <SimilarityModal groups={simGroups} chapterName={chapterName} onClose={() => setShowSim(false)} />}
     </div>
   );
 }
