@@ -24,10 +24,10 @@ export default function SimilarityModal({ groups, chapterName, onClose }) {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col bg-slate-900/60 backdrop-blur-sm">
-      <div className="mt-auto flex h-[92vh] flex-col rounded-t-2xl bg-[#F8FAFC] shadow-2xl md:mx-auto md:my-auto md:h-[86vh] md:w-full md:max-w-2xl md:rounded-2xl">
+    <div className="fixed inset-0 z-[100] flex flex-col bg-[#F8FAFC]">
+      <div className="flex h-full w-full flex-col">
         {/* header */}
-        <div className="flex items-center gap-2 rounded-t-2xl bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 px-4 py-3">
+        <div className="flex items-center gap-2 bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 px-4 py-3">
           <Star className="h-4 w-4 fill-amber-600 text-amber-700" />
           <div className="min-w-0">
             <p className="truncate text-sm font-black uppercase tracking-wide text-amber-900">Similar Questions</p>
