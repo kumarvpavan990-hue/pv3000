@@ -37,4 +37,12 @@ export const ECF_MCQ = [
     M("Exam 3", "The electric dipole placed in uniform electric field experiences\na) Only force\nb) Only torque\nc) Force and torque\nd) Neither force nor torque", "b) Only torque"),
     M("Exam 3", "A sphere has charge $Q$. Relative to $V = 0$ at infinity, the electrostatic potential $V$ and electric field $E$ inside the sphere are\na) $V = 0$ and $E \\neq 0$\nb) $V \\neq 0$ and $E \\neq 0$\nc) $V \\neq 0$ and $E = 0$\nd) $V = 0$ and $E = 0$", "c) $V \\neq 0$ and $E = 0$"),
   ])],
+  [P("Fill in the Blanks", "1 Mark", "amber", [
+    M("FBK 1", "Polar molecules have permanent ______.", "electric dipole moment"),
+    M("FBK 2", "In a charge distribution, the ratio of electric charge to the length is ______ charge density.", "linear"),
+    M("FBK 3", "According to Gauss's law in magnetism, magnetic ______ are not known to exist.", "monopoles"),
+    M("FBK 4", "An electric dipole placed in a uniform electric field experiences a net ______.", "torque"),
+    M("FBK 5", "The mutual inductance of a solenoid can be decreased by ______ the number of turns per unit length either in inner or outer solenoid.", "decreasing"),
+    M("FBK 6", "______ is equal to work done to transfer unit positive test charge from infinity to a point in electric field opposite to field.", "electrostatic potential"),
+  ])],
 ];
