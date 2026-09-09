@@ -148,11 +148,77 @@ const ECF_5M_THEORY = [
   },
 ];
 
+const ECP_5M_THEORY = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question:
+          "Derive the expression for electric potential at a point due to a point charge / Define electrostatic potential. Obtain an expression for electrostatic potential at a point due to an isolated point charge.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2027", exam: "Model Paper 1" },
+          { year: "2025", exam: "Exam 1" },
+          { year: "2025", exam: "Exam 3" },
+          { year: "2024", exam: "Exam 2" },
+        ],
+        total: 4,
+        answer:
+          "Electrostatic potential $V$ at a distance $r$ from a point charge $q$ is the work done per unit positive charge to bring it from infinity.\n\n$V = -\\int E \\cdot dr = -\\int \\left( \\frac{kq}{r^2} \\right) dr = \\frac{kq}{r} = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{q}{r}$",
+      },
+      {
+        question:
+          "Derive the expression for the capacitance of a parallel plate capacitor with air between the plates. Also write the general expression for the capacitance of a parallel plate capacitor with a dielectric medium.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2027", exam: "Model Paper 4" },
+          { year: "2024", exam: "Exam 1 (b)" },
+        ],
+        total: 2,
+        answer:
+          "For air:\n\n$E = \\frac{\\sigma}{\\varepsilon_0} = \\frac{Q}{A\\varepsilon_0}$\n\n$V = E \\cdot d = \\frac{Qd}{A\\varepsilon_0}$\n\n$C = \\frac{Q}{V} = \\frac{\\varepsilon_0 A}{d}$\n\nWith dielectric:\n\n$C = \\frac{K\\varepsilon_0 A}{d}$",
+      },
+      {
+        question: "What are polar and non-polar molecules?",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2024", exam: "Exam 1 (a)" }],
+        total: 1,
+        answer:
+          "Polar molecules have a permanent electric dipole moment due to the asymmetric distribution of charges (e.g., $H_2O$). Non-polar molecules have a zero net dipole moment as the centers of positive and negative charges coincide (e.g., $CO_2$, $CH_4$).",
+      },
+      {
+        question:
+          "Derive an expression for equivalent capacitance of two capacitors connected in series.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2024", exam: "Exam 3 (a)" }],
+        total: 1,
+        answer:
+          "In series, the charge $Q$ is the same. Voltage $V = V_1 + V_2$.\n\n$\\frac{Q}{C_{eq}} = \\frac{Q}{C_1} + \\frac{Q}{C_2}$. Therefore,\n\n$\\frac{1}{C_{eq}} = \\frac{1}{C_1} + \\frac{1}{C_2}$",
+      },
+      {
+        question: "Write any two properties of the equipotential surface.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2024", exam: "Exam 3 (b)" }],
+        total: 1,
+        answer:
+          "1. No two equipotential surfaces can intersect each other.\n2. The electric field lines are always perpendicular to the equipotential surfaces.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
   "Electric Charges & Fields:numeric": ECF_NUMERIC,
   "Electric Charges and Fields:5m": ECF_5M_THEORY,
   "Electric Charges & Fields:5m": ECF_5M_THEORY,
+  "Electrostatic Potential and Capacitance:5m": ECP_5M_THEORY,
+  "Electrostatic Potential & Capacitance:5m": ECP_5M_THEORY,
 };
 
 export function resolveSimilarity({ chapterName, mark }) {
