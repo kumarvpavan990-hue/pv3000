@@ -109,7 +109,20 @@ export default function ChapterQuestions() {
                   </h2>
                 </div>
 
-                {g.questions.length === 0 ? (
+                {g.options && g.options.length > 0 && (
+                  <div className="mb-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-3">
+                    <p className="mb-2 text-[10px] font-black uppercase tracking-wide text-amber-700">Choose from the options</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {g.options.map((opt, oi) => (
+                        <span key={oi} className="rounded-full border border-amber-300 bg-white px-2.5 py-1 text-[11px] font-semibold text-amber-900 shadow-sm">
+                          {opt}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+
                   <div className="rounded-xl border border-slate-200 bg-white px-4 py-6 text-center shadow-sm">
                     <p className="text-xs font-semibold text-slate-500">Questions will be added soon.</p>
                   </div>

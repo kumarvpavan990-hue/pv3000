@@ -2,7 +2,7 @@
 // <MathText/> (KaTeX). Options are embedded in the question text (newlines
 // preserved). `solution` holds the correct answer, revealed via the toggle.
 
-const P = (year, label, tint, questions) => ({ year, label, tint, questions });
+const P = (year, label, tint, questions, options) => ({ year, label, tint, questions, ...(options ? { options } : {}) });
 const M = (tag, text, answer) => ({ tag, qno: "", marks: 1, text, solution: [`Correct answer: ${answer}`] });
 
 export const ECF_MCQ = [
@@ -44,5 +44,5 @@ export const ECF_MCQ = [
     M("FBK 4", "An electric dipole placed in a uniform electric field experiences a net ______.", "torque"),
     M("FBK 5", "The mutual inductance of a solenoid can be decreased by ______ the number of turns per unit length either in inner or outer solenoid.", "decreasing"),
     M("FBK 6", "______ is equal to work done to transfer unit positive test charge from infinity to a point in electric field opposite to field.", "electrostatic potential"),
-  ])],
+  ], ["torque", "linear", "monopoles", "electric dipole moment", "electrostatic potential", "decreasing"])],
 ];
