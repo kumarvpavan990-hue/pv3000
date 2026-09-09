@@ -16,6 +16,7 @@ import { CHEMISTRY_5M } from "@/lib/chemistry5mQuestions";
 import { CHEMISTRY_3M_INORG } from "@/lib/chemistry3mQuestions";
 import { CHEMISTRY_3M_PHYS } from "@/lib/chemistry3mQuestions";
 import { SOLUTIONS_NUMERIC } from "@/lib/solutionsNumericals";
+import { ECF_MCQ } from "@/lib/ecfMcq";
 
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
@@ -130,6 +131,11 @@ export const CHAPTER_QUESTION_BANKS = {
   // ===== Chemistry — Part D NUMERICALS (with worked solutions) — Solutions =====
   "chemistry:Solutions:numeric": SOLUTIONS_NUMERIC["Solutions"],
   "chemistry:1:numeric": SOLUTIONS_NUMERIC["Solutions"],
+
+  // ===== Physics — Electric Charges & Fields · 1 Mark MCQs (Part A) =====
+  "physics:Electric Charges & Fields:A": ECF_MCQ,
+  "physics:Electric Charges and Fields:A": ECF_MCQ,
+  "physics:1:A": ECF_MCQ,
 };
 
 export function getChapterBank(subjectId, ch, mark) {
