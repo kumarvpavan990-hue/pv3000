@@ -53,8 +53,8 @@ export default function SimilarityModal({ groups, chapterName, onClose }) {
               {groups.map((grp) => (
                 <section key={grp.sim}>
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="rounded-lg bg-violet-600 px-2.5 py-1 text-xs font-black uppercase tracking-wide text-white">{grp.sim}</span>
-                    <span className="text-xs font-bold text-slate-500">{grp.items.length} similar</span>
+                    <span className="rounded-lg bg-gradient-to-r from-amber-400 to-yellow-500 px-2.5 py-1 text-xs font-black uppercase tracking-wide text-amber-950 shadow-sm">{grp.sim}</span>
+                    <span className="text-xs font-bold text-amber-700">{grp.items.length} similar</span>
                   </div>
                   <div className="space-y-3">
                     {grp.items.map((q, i) => {
@@ -84,14 +84,14 @@ export default function SimilarityModal({ groups, chapterName, onClose }) {
                           <button
                             type="button"
                             onClick={() => setOpen((o) => ({ ...o, [key]: !o[key] }))}
-                            className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-bold text-white transition hover:bg-emerald-700"
+                            className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-400 to-yellow-500 px-3 py-1.5 text-[11px] font-bold text-amber-950 shadow-sm transition hover:from-amber-500 hover:to-yellow-600"
                           >
                             <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open[key] ? "rotate-180" : ""}`} />
                             {open[key] ? "Hide Answer" : "View Answer"}
                           </button>
                           {open[key] && (
-                            <div className="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2.5">
-                              <p className="mb-1 text-[10px] font-black uppercase tracking-wide text-emerald-700">Answer</p>
+                            <div className="mt-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5">
+                              <p className="mb-1 text-[10px] font-black uppercase tracking-wide text-amber-700">Answer</p>
                               <MathText value={q.answer} className="text-[12px] leading-relaxed text-slate-800" />
                             </div>
                           )}
