@@ -1,5 +1,6 @@
 import React from "react";
 import { X, Star, Repeat, ChevronDown } from "lucide-react";
+import { MathText } from "@/components/MathText";
 
 const DIFF_COLORS = {
   easy: "bg-emerald-100 text-emerald-700",
@@ -70,7 +71,7 @@ export default function SimilarityModal({ groups, chapterName, onClose }) {
                             </span>
                           </div>
 
-                          <p className="text-[12px] leading-relaxed text-slate-900">{q.question}</p>
+                          <MathText value={q.question} className="text-[12px] leading-relaxed text-slate-900" />
 
                           <div className="mt-2 flex flex-wrap gap-1.5">
                             {q.repetitions.map((r, ri) => (
@@ -91,7 +92,7 @@ export default function SimilarityModal({ groups, chapterName, onClose }) {
                           {open[key] && (
                             <div className="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2.5">
                               <p className="mb-1 text-[10px] font-black uppercase tracking-wide text-emerald-700">Answer</p>
-                              <p className="text-[12px] leading-relaxed text-slate-800">{q.answer}</p>
+                              <MathText value={q.answer} className="text-[12px] leading-relaxed text-slate-800" />
                             </div>
                           )}
                         </div>

@@ -91,9 +91,68 @@ const ECF_NUMERIC = [
   },
 ];
 
+const ECF_5M_THEORY = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question:
+          "State Gauss's law in electrostatics. Using it, derive the expression for the electric field at a point due to an infinitely long, straight, uniformly charged wire.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2027", exam: "Model Paper 5" },
+          { year: "2026", exam: "Exam 1" },
+          { year: "2026", exam: "Exam 2" },
+          { year: "2023", exam: "Main Exam" },
+          { year: "2023", exam: "Supplement (2nd Set)" },
+        ],
+        total: 5,
+        answer:
+          "Gauss's law states that the total electric flux through a closed surface is $\\frac{1}{\\varepsilon_0}$ times the charge enclosed ($\\Phi = \\frac{q}{\\varepsilon_0}$). For an infinitely long wire with linear charge density $\\lambda$, consider a cylindrical Gaussian surface of radius $r$ and length $l$. By symmetry, $E$ is radial and constant over the curved surface. Flux $= E \\times 2\\pi r l$. Charge enclosed $= \\lambda l$. So, $E(2\\pi r l) = \\frac{\\lambda l}{\\varepsilon_0}$, which gives $E = \\frac{\\lambda}{2\\pi \\varepsilon_0 r}$.",
+      },
+      {
+        question:
+          "Derive an expression for the electric field at a point on the axial line (axis) of an electric dipole.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2027", exam: "Model Paper 2" },
+          { year: "2027", exam: "Model Paper 3" },
+        ],
+        total: 2,
+        answer:
+          "Consider a dipole with charges $+q$ and $-q$ separated by $2a$. Let P be a point on the axial line at a distance $r$ from the center. The electric field due to $+q$ is $E_+ = \\frac{kq}{(r-a)^2}$ (away from $+q$). The field due to $-q$ is $E_- = \\frac{kq}{(r+a)^2}$ (towards $-q$). Net field $E = E_+ - E_- = kq\\left[\\frac{1}{(r-a)^2} - \\frac{1}{(r+a)^2}\\right]$. Solving this gives $E = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{2pr}{(r^2 - a^2)^2}$, where $p = 2aq$ is the dipole moment. For short dipoles ($r \\gg a$), $E = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{2p}{r^3}$ along the dipole axis.",
+      },
+      {
+        question:
+          "Derive the expression for the electric field at a point on the equatorial line of an electric dipole.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2023", exam: "Supplement" }],
+        total: 1,
+        answer:
+          "For a point P on the equatorial line at distance $r$, the fields $E_+$ (due to $+q$) and $E_-$ (due to $-q$) have equal magnitudes. Their vertical components cancel out, and horizontal components add up. Net field $E = -2E_+\\cos\\theta$. Substituting $E_+ = \\frac{kq}{r^2 + a^2}$ and $\\cos\\theta = \\frac{a}{\\sqrt{r^2 + a^2}}$, we get $E = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{p}{(r^2 + a^2)^{3/2}}$. For short dipoles ($r \\gg a$), $E = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{p}{r^3}$ directed opposite to the dipole moment.",
+      },
+      {
+        question:
+          "Deduce an expression for electric field at a point outside a thin uniformly-charged spherical shell using Gauss's law.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2025", exam: "Exam 2" }],
+        total: 1,
+        answer:
+          "Consider a thin spherical shell of radius $R$ with total charge $Q$. To find the field at a point P outside (distance $r > R$), draw a concentric spherical Gaussian surface of radius $r$. By symmetry, $E$ is radial and constant over the surface. Flux $= E \\times 4\\pi r^2$. Enclosed charge $= Q$. Applying Gauss's law: $E(4\\pi r^2) = \\frac{Q}{\\varepsilon_0}$. Therefore, $E = \\frac{Q}{4\\pi\\varepsilon_0 r^2}$. This shows that for points outside the shell, the field is exactly as if the entire charge were concentrated at the center.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
   "Electric Charges & Fields:numeric": ECF_NUMERIC,
+  "Electric Charges and Fields:5m": ECF_5M_THEORY,
+  "Electric Charges & Fields:5m": ECF_5M_THEORY,
 };
 
 export function resolveSimilarity({ chapterName, mark }) {
