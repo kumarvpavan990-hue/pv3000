@@ -8,7 +8,7 @@ import { BLUEPRINTS } from "@/lib/blueprints";
 import { resolveChapterBank } from "@/lib/chapterQuestionBanks";
 import { Textarea } from "@/components/ui/textarea";
 import { MathText } from "@/components/MathText";
-import { Atom, FlaskConical, Sigma, Dna, Cpu, BookOpen, Languages, ScrollText, ChevronLeft, ChevronRight, Pencil, Check, X, Star, FileQuestion } from "lucide-react";
+import { Atom, FlaskConical, Sigma, Dna, Cpu, BookOpen, Languages, ScrollText, ChevronLeft, ChevronRight, Pencil, Check, X, Star, FileQuestion, Lightbulb } from "lucide-react";
 
 const ICONS = { Atom, FlaskConical, Sigma, Dna, Cpu, BookOpen, Languages, ScrollText };
 
@@ -43,6 +43,7 @@ export default function ChapterQuestions() {
   const [edits, setEdits] = React.useState({});
   const [editingId, setEditingId] = React.useState(null);
   const [draft, setDraft] = React.useState("");
+  const [revealed, setRevealed] = React.useState({});
   const STORAGE_KEY = `chq_edits_${subjectId}_${ch || chapterName}_${mark}`;
 
   const groups = pages[page] || [];
@@ -150,7 +151,34 @@ export default function ChapterQuestions() {
                                 </div>
                               </div>
                             ) : (
-                              <MathText value={value} className="text-[11px] leading-relaxed text-slate-900" />
+                              <>
+                                <MathText value={value} className="text-[11px] leading-relaxed text-slate-900" />
+                                {q.solution && (
+                                  <div className="mt-2">
+                                    <button
+                                      type="button"
+                                      onClick={() => setRevealed((r) => ({ ...r, [id]: !r[id] }))}
+                                      className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-bold text-white transition hover:bg-emerald-700"
+                                    >
+                                      <Lightbulb className="h-3.5 w-3.5" />
+                                      {revealed[id] ? "Hide Solution" : "View Solution"}
+                                    </button>
+                                    {revealed[id] && (
+                                      <div className="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3">
+                                        <p className="mb-1.5 text-[10px] font-black uppercase tracking-wide text-emerald-700">Solution</p>
+                                        <ol className="space-y-1.5">
+                                          {q.solution.map((step, si) => (
+                                            <li key={si} className="flex gap-2">
+                                              <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[9px] font-bold text-white">{si + 1}</span>
+                                              <MathText value={step} className="text-[11px] leading-relaxed text-slate-800" />
+                                            </li>
+                                          ))}
+                                        </ol>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                              </>
                             )}
                           </div>
                         );

@@ -15,6 +15,7 @@ import { CHEMISTRY_2M } from "@/lib/chemistryQuestions";
 import { CHEMISTRY_5M } from "@/lib/chemistry5mQuestions";
 import { CHEMISTRY_3M_INORG } from "@/lib/chemistry3mQuestions";
 import { CHEMISTRY_3M_PHYS } from "@/lib/chemistry3mQuestions";
+import { SOLUTIONS_NUMERIC } from "@/lib/solutionsNumericals";
 
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
@@ -125,6 +126,10 @@ export const CHAPTER_QUESTION_BANKS = {
   // ===== Chemistry — 3 Mark (Part C, physical) — Solutions =====
   "chemistry:Solutions:3m-phys": CHEMISTRY_3M_PHYS["Solutions"],
   "chemistry:1:3m-phys": CHEMISTRY_3M_PHYS["Solutions"],
+
+  // ===== Chemistry — Part D NUMERICALS (with worked solutions) — Solutions =====
+  "chemistry:Solutions:numeric": SOLUTIONS_NUMERIC["Solutions"],
+  "chemistry:1:numeric": SOLUTIONS_NUMERIC["Solutions"],
 };
 
 export function getChapterBank(subjectId, ch, mark) {
