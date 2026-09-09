@@ -212,11 +212,132 @@ const ECP_5M_THEORY = [
   },
 ];
 
+const ECF_2M = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question: "State and explain Gauss's law in electrostatics.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [
+          { year: "2024", exam: "Exam 1" },
+          { year: "2024", exam: "Exam 2" },
+          { year: "2024", exam: "Exam 3" },
+        ],
+        total: 3,
+        answer:
+          "It states that the total electric flux through a closed surface is equal to $\\frac{1}{\\varepsilon_0}$ times the net charge enclosed by that surface.\n\nFormula: $\\Phi = \\frac{Q_{\\text{enclosed}}}{\\varepsilon_0}$.",
+      },
+      {
+        question: "Write/Give any two properties of electric field lines.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [
+          { year: "2025", exam: "Exam 2" },
+          { year: "2026", exam: "Exam 1" },
+        ],
+        total: 2,
+        answer:
+          "1. Electric field lines start from positive charges and terminate on negative charges.\n2. Two electric field lines never intersect each other.",
+      },
+      {
+        question: "Define electric field at a point. What is meant by 'source charge'?",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 1" }],
+        total: 1,
+        answer:
+          "Electric field at a point is defined as the force experienced per unit positive test charge placed at that point ($E = \\frac{F}{q_0}$).\nA 'source charge' is the charge which is producing the electric field in the surrounding space.",
+      },
+      {
+        question: "Sketch the electric field lines for (a) a positive point charge and (b) an electric dipole.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 2" }],
+        total: 1,
+        answer:
+          "(a) For a positive point charge, the field lines point radially outward from the charge.\n(b) For an electric dipole, field lines emanate from the positive charge and terminate on the negative charge, forming a curved pattern.",
+      },
+      {
+        question: "Mention two factors on which electric field at a point due to a point charge depends.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 5" }],
+        total: 1,
+        answer:
+          "1. Magnitude of the source charge ($q$).\n2. Distance ($r$) from the source charge to the point.\n\n(Formula: $E = \\frac{kq}{r^2}$)",
+      },
+      {
+        question: "State and explain Coulomb's law in electrostatics.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2025", exam: "Exam 3" }],
+        total: 1,
+        answer:
+          "The electrostatic force between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them.\n\nFormula: $F = \\frac{k q_1 q_2}{r^2}$.",
+      },
+      {
+        question: "Define electric flux through an area element. Mention its SI unit.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 3" }],
+        total: 1,
+        answer:
+          "Electric flux is the scalar product of the electric field vector and the area vector ($\\Delta \\Phi = \\mathbf{E} \\cdot \\Delta \\mathbf{S}$).\nIts SI unit is $\\text{N m}^2/\\text{C}$ (or $\\text{V m}$).",
+      },
+      {
+        question: "Define the term 'linear charge density'. Mention its SI unit.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 4" }],
+        total: 1,
+        answer:
+          "Linear charge density is defined as the amount of electric charge per unit length ($\\lambda = \\frac{q}{l}$).\nIts SI unit is Coulomb per meter ($\\text{C/m}$).",
+      },
+      {
+        question: "What is electrostatic shielding? Mention one use of it.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2026", exam: "Exam 1" }],
+        total: 1,
+        answer:
+          "Electrostatic shielding is the phenomenon where the electric field inside a hollow conductor is zero, so no external electric field can penetrate it.\n\nOne use is to protect sensitive electronic circuits and instruments from external electric fields.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 2",
+    items: [
+      {
+        question: "Two identical point charges are separated by a distance 0.2 m in air repel each other with a force 9 × 10³ N. Find the magnitude of each charge.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2026", exam: "Exam 2" }],
+        total: 1,
+        answer:
+          "$F = \\frac{kq^2}{r^2}$.\n$9 \\times 10^3 = \\frac{9 \\times 10^9 \\cdot q^2}{(0.2)^2}$.\n$q^2 = \\frac{9 \\times 10^3 \\cdot 0.04}{9 \\times 10^9} = 4 \\times 10^{-8}$.\n$q = 2 \\times 10^{-4} \\, \\text{C}$.",
+      },
+      {
+        question: "Find the force on a point charge 2 × 10⁻⁶ C, placed at a point in a uniform electric field of 0.8 NC⁻¹.",
+        difficulty: "easy",
+        marks: "2 marks",
+        repetitions: [{ year: "2025", exam: "Exam 2" }],
+        total: 1,
+        answer:
+          "$F = qE$.\n$F = (2 \\times 10^{-6} \\, \\text{C}) \\times (0.8 \\, \\text{NC}^{-1})$.\n$F = 1.6 \\times 10^{-6} \\, \\text{N}$.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
   "Electric Charges & Fields:numeric": ECF_NUMERIC,
   "Electric Charges and Fields:5m": ECF_5M_THEORY,
   "Electric Charges & Fields:5m": ECF_5M_THEORY,
+  "Electric Charges and Fields:2m": ECF_2M,
+  "Electric Charges & Fields:2m": ECF_2M,
   "Electrostatic Potential and Capacitance:5m": ECP_5M_THEORY,
   "Electrostatic Potential & Capacitance:5m": ECP_5M_THEORY,
 };
