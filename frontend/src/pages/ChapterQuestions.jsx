@@ -123,6 +123,7 @@ export default function ChapterQuestions() {
                 )}
 
 
+                {g.questions.length === 0 ? (
                   <div className="rounded-xl border border-slate-200 bg-white px-4 py-6 text-center shadow-sm">
                     <p className="text-xs font-semibold text-slate-500">Questions will be added soon.</p>
                   </div>
