@@ -331,6 +331,93 @@ const ECF_2M = [
   },
 ];
 
+const ECF_3M = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question: "Mention/Write any three properties of electric field lines.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [
+          { year: "2023", exam: "Main Exam" },
+          { year: "2023", exam: "Supplement" },
+          { year: "2024", exam: "Exam 1" },
+          { year: "2025", exam: "Exam 1" },
+          { year: "2025", exam: "Exam 3" },
+          { year: "2027", exam: "Model Paper 5" },
+        ],
+        total: 6,
+        answer:
+          "1. Field lines start from positive charges and end on negative charges.\n2. Two field lines never intersect each other.\n3. The tangent to a field line at a point gives the direction of the electric field at that point, and the density of lines represents the strength of the field.",
+      },
+      {
+        question: "Derive an expression for torque acting on an electric dipole placed in a uniform electric field.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [
+          { year: "2026", exam: "Exam 2" },
+          { year: "2027", exam: "Model Paper 1" },
+        ],
+        total: 2,
+        answer:
+          "When a dipole (charges $+q$ and $-q$ separated by distance $2a$) is placed at an angle $\\theta$ to a uniform field $E$, the two forces ($+qE$ and $-qE$) form a couple.\n\nTorque $\\tau = \\text{Force} \\times \\text{perpendicular distance} = qE \\times (2a \\sin\\theta) = (q \\times 2a) E \\sin\\theta = pE \\sin\\theta$.\n\nIn vector form: $\\tau = \\mathbf{p} \\times \\mathbf{E}$.",
+      },
+      {
+        question: "Give Coulomb's law in vector form and explain the terms. Define SI unit of charge using Coulomb's law.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [
+          { year: "2026", exam: "Exam 1" },
+          { year: "2027", exam: "Model Paper 2" },
+        ],
+        total: 2,
+        answer:
+          "Vector form: $\\mathbf{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{q_1 q_2}{r^2} \\hat{\\mathbf{r}}_{12}$.\n\nTerms: $q_1, q_2$ are charges, $r$ is distance, $\\hat{\\mathbf{r}}$ is unit vector, $\\varepsilon_0$ is permittivity of free space.\n\nSI unit of charge is Coulomb (C). Defined as the charge that repels an identical charge placed 1 meter away in vacuum with a force of $9 \\times 10^9 \\, \\text{N}$.",
+      },
+      {
+        question: "State and explain Coulomb's law of electrostatics.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [{ year: "2023", exam: "Supplement (Set 2)" }],
+        total: 1,
+        answer:
+          "The electrostatic force between two stationary point charges is directly proportional to the product of their magnitudes and inversely proportional to the square of the distance between them.\n\nFormula: $F = \\frac{1}{4\\pi\\varepsilon_0} \\cdot \\frac{q_1 q_2}{r^2}$.\n\nThe force acts along the line joining the two charges.",
+      },
+      {
+        question: "Mention any three basic properties of electric charges.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [
+          { year: "2024", exam: "Exam 2" },
+          { year: "2024", exam: "Exam 3" },
+        ],
+        total: 2,
+        answer:
+          "1. Electric charge is quantized ($q = ne$, where $n$ is an integer).\n2. Charge is conserved (it can neither be created nor destroyed, only transferred).\n3. Charge is additive (the total charge of a system is the algebraic sum of individual charges).",
+      },
+      {
+        question: "Define linear charge density. Mention the expression for electric field at a point due to an infinitely long uniformly charged wire and explain the terms.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 3" }],
+        total: 1,
+        answer:
+          "Linear charge density ($\\lambda$) is the charge per unit length ($\\lambda = \\frac{q}{l}$).\n\nExpression for E-field of an infinite line charge: $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r}$.\n\nTerms: $\\lambda$ is linear charge density, $\\varepsilon_0$ is permittivity of free space, and $r$ is the perpendicular distance from the wire to the point.",
+      },
+      {
+        question: "Show that the total electric flux through the surface of a sphere enclosing a point charge q at its centre is q/ε₀.",
+        difficulty: "easy",
+        marks: "3 marks",
+        repetitions: [{ year: "2027", exam: "Model Paper 4" }],
+        total: 1,
+        answer:
+          "The electric field at any point on the sphere is $E = \\frac{q}{4\\pi\\varepsilon_0 r^2}$, pointing radially outward.\n\nTotal flux $\\Phi = \\int \\mathbf{E} \\cdot d\\mathbf{S} = E \\times 4\\pi r^2$ (since $E$ is parallel to $d\\mathbf{S}$).\n\n$\\Phi = \\left[ \\frac{q}{4\\pi\\varepsilon_0 r^2} \\right] \\times 4\\pi r^2 = \\frac{q}{\\varepsilon_0}$.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
   "Electric Charges & Fields:numeric": ECF_NUMERIC,
@@ -338,6 +425,8 @@ export const SIMILARITY_BANK = {
   "Electric Charges & Fields:5m": ECF_5M_THEORY,
   "Electric Charges and Fields:2m": ECF_2M,
   "Electric Charges & Fields:2m": ECF_2M,
+  "Electric Charges and Fields:3m": ECF_3M,
+  "Electric Charges & Fields:3m": ECF_3M,
   "Electrostatic Potential and Capacitance:5m": ECP_5M_THEORY,
   "Electrostatic Potential & Capacitance:5m": ECP_5M_THEORY,
 };
