@@ -3,27 +3,30 @@
 
 const P = (year, label, tint, questions) => ({ year, label, tint, questions });
 const Q = (tag, qno, text) => ({ tag, qno, marks: 5, text });
+// Image-based question (already-cropped photo). `image` is the chapter_images filename.
+const QI = (tag, qno, image) => ({ tag, qno, marks: 5, image });
 
 const HALOALKANES_5M = [
-  [P("2026-27", "Model Paper", "teal", [
-    Q("Model Paper 1", "Q37", "(a) When alkyl chlorides react with sodium iodide in dry acetone they give alkyl iodide. (i) Name this reaction. (ii) Write the general equation. (iii) Mention the role of dry acetone. (b) What is meant by racemic modification? 'They are optically inactive.' Give reason. (3+2)"),
-    Q("Model Paper 2", "Q35", "(a) Give the differences between $\\mathrm{S_N1}$ and $\\mathrm{S_N2}$ mechanism with respect to: (i) order of reaction (kinetics), (ii) configuration of the product, (iii) order of reactivity of alkyl halides. (b) Explain Wurtz reaction with general chemical equation."),
-    Q("Model Paper 3", "Q38", "(a) Explain Fittig reaction with general equation. (b) Write the mechanism for the conversion of methyl chloride to methanol. (c) How many stereocentres are present in butan-2-ol? (2+2+1)"),
-    Q("Model Paper 5", "Q35", "(a) Write the IUPAC name and structure of DDT. Give the reason why the use of DDT increased enormously worldwide after World War II. (b) Explain Wurtz-Fittig reaction for the preparation of toluene with chemical reaction. (3+2)"),
+  [P("2027", "Model Paper", "teal", [
+    QI("Model Paper 1", "", "halo5m-2027-mp1.jpg"),
+    QI("Model Paper 2", "", "halo5m-2027-mp2.jpg"),
+    QI("Model Paper 3", "", "halo5m-2027-mp3.jpg"),
+    QI("Model Paper 4", "", "halo5m-2027-mp4.jpg"),
+    QI("Model Paper 5", "", "halo5m-2027-mp5.jpg"),
   ])],
   [P("2026", "Exam", "blue", [
-    Q("Exam 1", "Q36", "(a) When an alkyl chloride reacts with sodium iodide in dry acetone it gives alkyl iodide. (i) Name this reaction. (ii) Write the general equation. (iii) Mention the role of dry acetone. (b) What is meant by racemic modification? 'They are optically inactive.' Give reason."),
-    Q("Exam 2", "Q35", "(a) Write the steps involved in $\\mathrm{S_N1}$ mechanism for the conversion of 2-bromo-2-methylpropane into 2-methylpropan-2-ol. (b) Explain Fittig reaction with an example. (c) Define chirality."),
+    QI("Exam 1", "", "halo5m-2026-e1.jpg"),
+    QI("Exam 2", "", "halo5m-2026-e2.jpg"),
   ])],
   [P("2025", "Exam", "sky", [
-    Q("Exam 1", "Q35", "(a) Write the $\\mathrm{S_N2}$ mechanism for the conversion of chloromethane to methanol. Mention its order. (b) What is racemic mixture? Represent butan-2-ol in racemic mixture form."),
-    Q("Exam 2", "Q35", "(a) Aryl halides are less reactive than alkyl halides towards nucleophilic substitution reactions. Give any three reasons for it. (b) Write the general equation for Finkelstein reaction. What is the role of dry acetone in this reaction?"),
-    Q("Exam 3", "Q35", "(a) Write the mechanism of $\\mathrm{S_N1}$ reaction involved in the hydrolysis of tertiary butyl bromide. Mention the reactant on which the rate of reaction depends. (b) Explain Zaytsev (Saytzeff) rule with suitable chemical equation."),
+    QI("Exam 1", "", "halo5m-2025-e1.jpg"),
+    QI("Exam 2", "", "halo5m-2025-e2.jpg"),
+    QI("Exam 3", "", "halo5m-2025-e3.jpg"),
   ])],
   [P("2024", "Exam", "indigo", [
-    Q("Exam 1", "Q37", "(a) Write the mechanism for the conversion of methyl chloride to methyl alcohol. Mention the order. (b) Complete the following equations: (i) $\\mathrm{C_6H_5CH_2Cl + 2Na \\xrightarrow{Dry\\ ether}}$ (ii) $\\mathrm{H_2C=CH_2 + Br_2 \\xrightarrow{CCl_4}}$"),
-    Q("Exam 2", "Q37", "(a) Explain the mechanism involved in the conversion of tertiary butyl bromide into tertiary butyl alcohol. (b) Haloarenes are less reactive towards nucleophilic substitution reaction. Give any two reasons."),
-    Q("Exam 3", "Q37", "(a) Identify A and B in the following equation: $\\mathrm{A + Mg \\xrightarrow{Dry\\ ether} B \\xrightarrow{H_3O^+} C_6H_6 + Mg(OH)Br}$ (b) Explain Wurtz-Fittig reaction with equation. (c) What is racemic modification?"),
+    QI("Exam 1", "", "halo5m-2024-e1.jpg"),
+    QI("Exam 2", "", "halo5m-2024-e2.jpg"),
+    QI("Exam 3", "", "halo5m-2024-e3.jpg"),
   ])],
 ];
 

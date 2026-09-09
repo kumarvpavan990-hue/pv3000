@@ -1,8 +1,9 @@
 import React from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { useQueryClient, useQuery } from "@tanstack/react-query";
-import { getSubject } from "@/lib/api";
+import { getSubject, chapterImageUrl } from "@/lib/api";
 import { Header } from "@/components/Header";
+import ImageZoomModal from "@/components/ImageZoomModal";
 import { ACCENTS } from "@/lib/theme";
 import { BLUEPRINTS } from "@/lib/blueprints";
 import { resolveChapterBank } from "@/lib/chapterQuestionBanks";
@@ -44,6 +45,7 @@ export default function ChapterQuestions() {
   const [editingId, setEditingId] = React.useState(null);
   const [draft, setDraft] = React.useState("");
   const [revealed, setRevealed] = React.useState({});
+  const [zoom, setZoom] = React.useState(null);
   const STORAGE_KEY = `chq_edits_${subjectId}_${ch || chapterName}_${mark}`;
 
   const groups = pages[page] || [];
@@ -119,7 +121,7 @@ export default function ChapterQuestions() {
                               <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold text-slate-900">{q.tag}</span>
                               <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">Easy</span>
                               <span className="rounded bg-violet-100 px-1.5 py-0.5 text-[10px] font-bold text-violet-700">Concept</span>
-                              {!isEditing && (
+                              {!isEditing && !q.image && (
                                 <button
                                   type="button"
                                   onClick={() => startEdit(id, q.text)}
@@ -131,7 +133,21 @@ export default function ChapterQuestions() {
                               )}
                             </div>
 
-                            {isEditing ? (
+                            {q.image ? (
+                              <button
+                                type="button"
+                                onClick={() => setZoom({ src: chapterImageUrl(q.image), alt: `${g.year} · ${q.tag}` })}
+                                className="block w-full overflow-hidden rounded-lg border border-slate-200 bg-white"
+                                aria-label="Open question image"
+                              >
+                                <img
+                                  src={chapterImageUrl(q.image)}
+                                  alt={`${g.year} · ${q.tag}`}
+                                  loading="lazy"
+                                  className="w-full select-none"
+                                />
+                              </button>
+                            ) : isEditing ? (
                               <div>
                                 <Textarea
                                   value={draft}
@@ -212,6 +228,8 @@ export default function ChapterQuestions() {
           </div>
         </div>
       )}
+
+      {zoom && <ImageZoomModal src={zoom.src} alt={zoom.alt} onClose={() => setZoom(null)} />}
     </div>
   );
 }
