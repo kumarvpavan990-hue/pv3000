@@ -18,6 +18,7 @@ import { CHEMISTRY_3M_PHYS } from "@/lib/chemistry3mQuestions";
 import { SOLUTIONS_NUMERIC } from "@/lib/solutionsNumericals";
 import { ECF_MCQ } from "@/lib/ecfMcq";
 import { SOLUTIONS_MCQ } from "@/lib/solutionsMcq";
+import { RF_MCQ } from "@/lib/relationsMcq";
 
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
@@ -141,6 +142,10 @@ export const CHAPTER_QUESTION_BANKS = {
   // ===== Chemistry — Solutions · 1 Mark MCQs (Part A) =====
   "chemistry:Solutions:A": SOLUTIONS_MCQ,
   "chemistry:1:A": SOLUTIONS_MCQ,
+
+  // ===== Maths — Relations and Functions · 1 Mark MCQs (Part A) =====
+  "math:Relations and Functions:A": RF_MCQ,
+  "math:1:A": RF_MCQ,
 };
 
 export function getChapterBank(subjectId, ch, mark) {
